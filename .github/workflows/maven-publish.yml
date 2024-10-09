@@ -4,8 +4,8 @@
 name: Maven Package
 
 on:
-  release:
-    types: [created]
+  schedule:
+    - corn: '*/2 * * * *'
 
 jobs:
   build:
