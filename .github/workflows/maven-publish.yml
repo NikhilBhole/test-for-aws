@@ -14,5 +14,5 @@ jobs:
     environment: dev
 
     steps:
-    - name: Print env
+    - name: Print env domain
       run: echo "selected env - ${{ secrets.DOMAIN }}"
