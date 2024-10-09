@@ -15,4 +15,4 @@ jobs:
 
     steps:
     - name: Print env domain
-      run: echo "selected env - ${{ secrets.DOMAIN }}"
+      run: echo "selected env - ${{ secrets.DOMAIN }} - ${{ env.DOMAIN }}"
