@@ -12,7 +12,17 @@ jobs:
 
     runs-on: ubuntu-latest
     environment: dev
+    env:
+      GLOBAL_VAR: "Global Value"
 
     steps:
     - name: Print env domain
       run: echo "selected env - ${{ secrets.DOMAIN }} - ${{ env.DOMAIN }} - ${{ vars.DOMAIN }}"
+      
+    - name: Pring global value
+      run: echo "The job variable is ${{ env.GLOBAL_VAR }}"
+      
+    - name: Print step value
+      env:
+        STEP_VAR: "Step Value" 
+      run: echo "The step variable is ${{ env.STEP_VAR }}"
