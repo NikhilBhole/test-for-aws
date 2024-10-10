@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: dev
     env:
-      GLOBAL_VAR: "Global Value"
+      GLOBAL_VAR: ${{ secrets.DOMAIN }}
 
     steps:
     - name: Print env domain
