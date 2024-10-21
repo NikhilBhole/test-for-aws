@@ -22,6 +22,9 @@ jobs:
     steps:
     - name: print branch
       run: echo "${{ github.ref }}"
+
+    - name: selected environment
+      run: echo "${{ github.event.inputs.environment }}"
       
     - name: Print env domain
       run: echo "selected env - ${{ vars.HOMEPAGE }}"
