@@ -34,7 +34,7 @@ jobs:
         echo "${{ github.event.inputs.environment }}"
       
     - name: Print env domain
-      run: echo "selected env - ${{ env.HOMEPAGE }}"
+      run: echo "selected env - $HOMEPAGE"
       
     - name: Pring global value
       run: echo "The job variable is ${{ env.GLOBAL_VAR }}"
