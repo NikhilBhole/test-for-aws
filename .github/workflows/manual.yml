@@ -28,14 +28,13 @@ jobs:
       GLOBAL_VAR: "global"
 
     steps:
-    - name: print branch
-      run: echo "${{ github.ref }}"
-
-    - name: selected environment
-      run: echo "${{ github.event.inputs.environment }}"
+    - name: print branch and environment
+      run: |
+        echo "${{ github.event.inputs.branch }}"
+        echo "${{ github.event.inputs.environment }}"
       
     - name: Print env domain
-      run: echo "selected env - ${{ vars.HOMEPAGE }}"
+      run: echo "selected env - ${{ env.HOMEPAGE }}"
       
     - name: Pring global value
       run: echo "The job variable is ${{ env.GLOBAL_VAR }}"
