@@ -32,10 +32,16 @@ jobs:
       run: |
         echo "branch - ${{ github.event.inputs.branch }}"
         echo "env - ${{ github.event.inputs.environment }}"
+
+    - name: Set dynamic HOMEPAGE based on environment selection
+      run: |
+          if [ "${{ github.event.inputs.environment }}" == "development" ]; then
+            echo "HOMEPAGE=https://dev@xyz.com" >> $GITHUB_ENV
+          elif [ "${{ github.event.inputs.environment }}" == "staging" ]; then
+            echo "HOMEPAGE=https://qa@xyz.com" >> $GITHUB_ENV
+          fi
       
     - name: Print env domain
-      env:
-          HOMEPAGE: ${{ vars.HOMEPAGE }}
       run: |
         echo "selected env - $HOMEPAGE"
       
