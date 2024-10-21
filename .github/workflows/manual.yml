@@ -16,7 +16,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    environment: ${{ github.ref == 'refs/heads/main' && 'development' || 'staging' }}
     env:
       GLOBAL_VAR: "global"
 
