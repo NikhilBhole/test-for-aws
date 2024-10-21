@@ -3,6 +3,14 @@ name: Manual workflow
 on:
   workflow_dispatch:
     inputs:
+      branch:
+        description: 'Select branch to deploy from'
+        required: true
+        default: 'main'
+        type: choice
+        options:
+          - main
+          - staging
       environment:
         description: 'Select the environment to deploy to'
         required: true
