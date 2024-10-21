@@ -36,8 +36,6 @@ jobs:
     - name: Print env domain
       run: |
         echo "selected env - ${{ vars.HOMEPAGE }}"
-        echo "selected env - ${{ env.HOMEPAGE }}"
-        echo "selected env - ${{ secrets.DOMAIN }}"
       
     - name: Pring global value
       run: echo "The job variable is ${{ env.GLOBAL_VAR }}"
