@@ -21,6 +21,9 @@ jobs:
       GLOBAL_VAR: "global"
 
     steps:
+    - name: print branch
+      run: echo "${{ github.ref }}"
+      
     - name: Print env domain
       run: echo "selected env - ${{ vars.HOMEPAGE }}"
       
