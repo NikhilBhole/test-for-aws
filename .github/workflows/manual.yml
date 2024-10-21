@@ -30,11 +30,14 @@ jobs:
     steps:
     - name: print branch and environment
       run: |
-        echo "${{ github.event.inputs.branch }}"
-        echo "${{ github.event.inputs.environment }}"
+        echo "branch - ${{ github.event.inputs.branch }}"
+        echo "env - ${{ github.event.inputs.environment }}"
       
     - name: Print env domain
-      run: echo "selected env - $HOMEPAGE"
+      run: |
+        echo "selected env - ${{ vars.HOMEPAGE }}"
+        echo "selected env - ${{ env.HOMEPAGE }}"
+        echo "selected env - ${{ secrets.DOMAIN }}"
       
     - name: Pring global value
       run: echo "The job variable is ${{ env.GLOBAL_VAR }}"
