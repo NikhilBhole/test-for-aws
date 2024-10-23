@@ -35,8 +35,8 @@ jobs:
 
     - name: Print env variables
       env: 
-        HOMEPAGE: ${{ env.HOMEPAGE }}
-      run: echo "Homepage is $HOMEPAGE"
+        HOMEPAGE: ${{ vars.HOMEPAGE }}
+      run: echo "Homepage is ${{ env.HOMEPAGE }}"
 
     - name: Set dynamic HOMEPAGE based on environment selection
       run: |
