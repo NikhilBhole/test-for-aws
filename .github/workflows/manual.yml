@@ -33,8 +33,10 @@ jobs:
         echo "branch - ${{ github.event.inputs.branch }}"
         echo "env - ${{ github.event.inputs.environment }}"
 
-    - name: print env variables
-      run: echo 'homepage - ${{ env.HOMEPAGE}}'
+    - name: Print env variables
+      env: 
+        HOMEPAGE: ${{ env.HOMEPAGE }}
+      run: echo "Homepage is $HOMEPAGE"
 
     - name: Set dynamic HOMEPAGE based on environment selection
       run: |
