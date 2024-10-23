@@ -33,6 +33,9 @@ jobs:
         echo "branch - ${{ github.event.inputs.branch }}"
         echo "env - ${{ github.event.inputs.environment }}"
 
+    - name: print env variables
+      run: echo 'homepage - ${{ vars.HOMEPAGE}}'
+
     - name: Set dynamic HOMEPAGE based on environment selection
       run: |
           if [ "${{ github.event.inputs.environment }}" == "development" ]; then
