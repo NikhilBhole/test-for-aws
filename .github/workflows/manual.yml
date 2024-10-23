@@ -34,7 +34,7 @@ jobs:
         echo "env - ${{ github.event.inputs.environment }}"
 
     - name: print env variables
-      run: echo 'homepage - ${{ vars.HOMEPAGE}}'
+      run: echo 'homepage - ${{ env.HOMEPAGE}}'
 
     - name: Set dynamic HOMEPAGE based on environment selection
       run: |
